@@ -1,0 +1,69 @@
+{
+  "name": "@charleewa/utils",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.9",
+  "description": "CharleeWa's common JavaScript / TypeScript utils",
+  "author": "Charlee Wang <18888351756@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/CharleeWa",
+  "homepage": "https://github.com/CharleeWa/utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharleeWa/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CharleeWa/utils/issues"
+  },
+  "keywords": [
+    "utils",
+    "charleewa",
+    "charleewa-utils"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "nr build --watch",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp --commit --push --tag && npm publish",
+    "start": "esno src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.6",
+    "@feseeker/ni": "^0.0.3",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/node": "^18.16.19",
+    "@types/throttle-debounce": "^5.0.0",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.44.0",
+    "esno": "^0.16.3",
+    "p-limit": "^4.0.0",
+    "rollup": "^3.26.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "throttle-debounce": "5.0.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.3.9",
+    "vitest": "^0.32.2"
+  }
+}
